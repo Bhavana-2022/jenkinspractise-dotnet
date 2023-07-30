@@ -24,7 +24,7 @@ pipeline {
         stage('build and package') {
            steps {
 
-            sh dotnet build src/NopCommerce.sln  
+              bat dotnet build src/NopCommerce.sln  
 
 
            }
