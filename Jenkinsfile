@@ -31,7 +31,11 @@ pipeline {
                 rtDotnetRun (
                     args : "build src/NopCommerce.sln",
                     resolverId : "bhavana"
-                ) 
+                )
+                 rtPublishBuildInfo (
+                    serverId: "bhavanainstance"
+                 )
+                 
 
 
            }
