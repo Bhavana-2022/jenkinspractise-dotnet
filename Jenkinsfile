@@ -23,8 +23,15 @@ pipeline {
         }
         stage('build and package') {
            steps {
-
-              sh 'dotnet build src/NopCommerce.sln'  
+                rtDotnetResolver (
+                    id : "bhavana",
+                    serverId : "bhavanainstance",
+                    repo : "commerce-nuget-local"
+                ) 
+                rtDotnetRun (
+                    args : "build src/NopCommerce.sln",
+                    resolverId : "bhavana"
+                ) 
 
 
            }
