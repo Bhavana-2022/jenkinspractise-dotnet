@@ -48,10 +48,7 @@ pipeline {
         stage('sonar-cube') {
             steps{
                 withSonarQubeEnv('SONAR_CLOUD') {
-                    mono SonarScanner.MSBuild.exe begin \
-                    /o:bhavanamangrathi123 \
-                    /k:bhavanamangrathi123_qt \
-                    /d:sonar.host.url=https://sonarcloud.io
+                    mono SonarScanner.MSBuild.exe begin \ /o:bhavanamangrathi123 \ /k:bhavanamangrathi123_qt \ /d:sonar.host.url=https://sonarcloud.io \
                     dotnet build src/NopCommerce
                     mono SonarScanner.MSBuild.exe end
                 }
