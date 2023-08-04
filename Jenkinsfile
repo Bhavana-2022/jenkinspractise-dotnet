@@ -49,7 +49,7 @@ pipeline {
             steps{
                 withSonarQubeEnv('SONAR_CLOUD') {
                   
-                   sh 'mono SonarScanner.MSBuild.exe begin  /o:bhavanamangrathi123  /k:bhavanamangrathi123_qt  /d:sonar.host.url=https://sonarcloud.io dotnet build src/NopCommerce mono SonarScanner.MSBuild.exe end' 
+                   sh 'mono /home/ubuntu/.dotnet/tools/SonarScanner.MSBuild.exe begin  /o:bhavanamangrathi123  /k:bhavanamangrathi123_qt  /d:sonar.host.url=https://sonarcloud.io dotnet build src/NopCommerce mono /home/ubuntu/.dotnet/tools/SonarScanner.MSBuild.exe end' 
 
                 }
             }
